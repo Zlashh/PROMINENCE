@@ -1,0 +1,239 @@
+---- Minecraft Crash Report ----
+// I just don't know what went wrong :(
+
+Time: 2026-01-18 08:22:43
+Description: Watching Server
+
+java.lang.Error: Watchdog
+	at knot//net.minecraft.class_1297.method_5653(class_1297.java:1949)
+	at knot//net.minecraft.class_1297.method_5786(class_1297.java:1757)
+	at knot//net.minecraft.class_1297.method_5662(class_1297.java:1770)
+	at knot//net.minecraft.class_5565.method_31734(class_5565.java:108)
+	at knot//net.minecraft.class_5565$$Lambda$5445/0x0000732a0cb5d878.accept(Unknown Source)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at knot//net.minecraft.class_5565.method_31760(class_5565.java:106)
+	at knot//net.minecraft.class_5579.method_31812(class_5579.java:299)
+	at knot//net.minecraft.class_5579.method_31846(class_5579.java:380)
+	at knot//net.minecraft.class_5579$$Lambda$5441/0x0000732a0cb5cef0.accept(Unknown Source)
+	at knot//it.unimi.dsi.fastutil.longs.LongOpenHashSet.forEach(LongOpenHashSet.java:756)
+	at knot//it.unimi.dsi.fastutil.longs.LongIterable.forEach(LongIterable.java:146)
+	at knot//it.unimi.dsi.fastutil.longs.AbstractLongCollection.forEach(AbstractLongCollection.java:149)
+	at knot//net.minecraft.class_5579.method_31829(class_5579.java:374)
+	at knot//net.minecraft.class_3218.method_14176(class_3218.java:794)
+	at knot//net.minecraft.server.MinecraftServer.method_3723(MinecraftServer.java:536)
+	at knot//net.minecraft.server.MinecraftServer.method_39218(MinecraftServer.java:560)
+	at knot//net.minecraft.server.MinecraftServer.method_3748(MinecraftServer.java:834)
+	at knot//net.minecraft.server.MinecraftServer.method_29741(MinecraftServer.java:671)
+	at knot//net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+	at knot//net.minecraft.server.MinecraftServer$$Lambda$4673/0x0000732a0c9dca50.run(Unknown Source)
+	at java.base@17.0.17/java.lang.Thread.run(Thread.java:840)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at knot//net.minecraft.class_1297.method_5653(class_1297.java:1949)
+	at knot//net.minecraft.class_1297.method_5786(class_1297.java:1757)
+	at knot//net.minecraft.class_1297.method_5662(class_1297.java:1770)
+	at knot//net.minecraft.class_5565.method_31734(class_5565.java:108)
+	at knot//net.minecraft.class_5565$$Lambda$5445/0x0000732a0cb5d878.accept(Unknown Source)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at knot//net.minecraft.class_5565.method_31760(class_5565.java:106)
+	at knot//net.minecraft.class_5579.method_31812(class_5579.java:299)
+	at knot//net.minecraft.class_5579.method_31846(class_5579.java:380)
+	at knot//net.minecraft.class_5579$$Lambda$5441/0x0000732a0cb5cef0.accept(Unknown Source)
+	at knot//it.unimi.dsi.fastutil.longs.LongOpenHashSet.forEach(LongOpenHashSet.java:756)
+	at knot//it.unimi.dsi.fastutil.longs.LongIterable.forEach(LongIterable.java:146)
+	at knot//it.unimi.dsi.fastutil.longs.AbstractLongCollection.forEach(AbstractLongCollection.java:149)
+	at knot//net.minecraft.class_5579.method_31829(class_5579.java:374)
+	at knot//net.minecraft.class_3218.method_14176(class_3218.java:794)
+	at knot//net.minecraft.server.MinecraftServer.method_3723(MinecraftServer.java:536)
+	at knot//net.minecraft.server.MinecraftServer.method_39218(MinecraftServer.java:560)
+	at knot//net.minecraft.server.MinecraftServer.method_3748(MinecraftServer.java:834)
+	at knot//net.minecraft.server.MinecraftServer.method_29741(MinecraftServer.java:671)
+	at knot//net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+
+-- Thread Dump --
+Details:
+	Threads: "Reference Handler" daemon prio=10 Id=2 RUNNABLE
+	at java.base@17.0.17/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@17.0.17/java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+	at java.base@17.0.17/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+
+"Finalizer" daemon prio=8 Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@55b76735
+	at java.base@17.0.17/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@55b76735
+	at java.base@17.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+	at java.base@17.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+	at java.base@17.0.17/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+
+"Signal Dispatcher" daemon prio=9 Id=4 RUNNABLE
+
+
+"Notification Thread" daemon prio=9 Id=11 RUNNABLE
+
+
+"Common-Cleaner" daemon prio=8 Id=12 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@5b7083f3
+	at java.base@17.0.17/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@5b7083f3
+	at java.base@17.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+	at java.base@17.0.17/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+	at java.base@17.0.17/java.lang.Thread.run(Thread.java:840)
+	at java.base@17.0.17/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+
+"JNA Cleaner" daemon prio=5 Id=21 WAITING on java.lang.ref.ReferenceQueue$Lock@5f4f0c45
+	at java.base@17.0.17/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@5f4f0c45
+	at java.base@17.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+	at java.base@17.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+	at knot//com.sun.jna.internal.Cleaner$1.run(Cleaner.java:58)
+
+
+"Timer hack thread" daemon prio=5 Id=22 TIMED_WAITING
+	at java.base@17.0.17/java.lang.Thread.sleep(Native Method)
+	at knot//net.minecraft.class_156$9.run(class_156.java:839)
+
+
+"Yggdrasil Key Fetcher" daemon prio=5 Id=23 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1a4d89c8
+	at java.base@17.0.17/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1a4d89c8
+	at java.base@17.0.17/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.17/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+	at java.base@17.0.17/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	...
+
+
+"Server thread" prio=5 Id=29 RUNNABLE
+	at knot//net.minecraft.class_1297.method_5653(class_1297.java:1949)
+	at knot//net.minecraft.class_1297.method_5786(class_1297.java:1757)
+	at knot//net.minecraft.class_1297.method_5662(class_1297.java:1770)
+	at knot//net.minecraft.class_5565.method_31734(class_5565.java:108)
+	at knot//net.minecraft.class_5565$$Lambda$5445/0x0000732a0cb5d878.accept(Unknown Source)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at knot//net.minecraft.class_5565.method_31760(class_5565.java:106)
+	...
+
+
+"DestroyJavaVM" prio=5 Id=31 RUNNABLE
+
+
+"Server console handler" daemon prio=5 Id=32 RUNNABLE (in native)
+	at java.base@17.0.17/java.io.FileInputStream.readBytes(Native Method)
+	at java.base@17.0.17/java.io.FileInputStream.read(FileInputStream.java:276)
+	at java.base@17.0.17/java.io.BufferedInputStream.read1(BufferedInputStream.java:282)
+	at java.base@17.0.17/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	-  locked java.io.BufferedInputStream@74adcb7b
+	at java.base@17.0.17/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:287)
+	at java.base@17.0.17/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:330)
+	at java.base@17.0.17/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:190)
+	-  locked java.io.InputStreamReader@2b1db106
+	at java.base@17.0.17/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	...
+
+
+"Netty Epoll Server IO #0" daemon prio=5 Id=33 RUNNABLE (in native)
+	at knot//io.netty.channel.epoll.Native.epollWait(Native Method)
+	at knot//io.netty.channel.epoll.Native.epollWait(Native.java:209)
+	at knot//io.netty.channel.epoll.Native.epollWait(Native.java:202)
+	at knot//io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:306)
+	at knot//io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:363)
+	at knot//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at knot//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base@17.0.17/java.lang.Thread.run(Thread.java:840)
+
+
+"Server Watchdog" daemon prio=5 Id=40 RUNNABLE
+	at java.management@17.0.17/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.17/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:528)
+	at java.management@17.0.17/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:516)
+	at knot//net.minecraft.class_3178.run(class_3178.java:47)
+	at java.base@17.0.17/java.lang.Thread.run(Thread.java:840)
+
+
+"IO-Worker-87" prio=5 Id=118 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@c17ad04
+	at java.base@17.0.17/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@c17ad04
+	at java.base@17.0.17/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.17/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+	at java.base@17.0.17/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.17/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.17/java.lang.Thread.run(Thread.java:840)
+
+
+"IO-Worker-88" prio=5 Id=119 RUNNABLE
+	at java.base@17.0.17/sun.nio.ch.FileDispatcherImpl.pwrite0(Native Method)
+	at java.base@17.0.17/sun.nio.ch.FileDispatcherImpl.pwrite(FileDispatcherImpl.java:68)
+	at java.base@17.0.17/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:130)
+	at java.base@17.0.17/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+	at java.base@17.0.17/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+	at java.base@17.0.17/sun.nio.ch.FileChannelImpl.writeInternal(FileChannelImpl.java:878)
+	at java.base@17.0.17/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:864)
+	at knot//net.minecraft.class_2861.method_21874(class_2861.java:396)
+	-  locked net.minecraft.class_2861@7a627687
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@62f414af
+
+
+
+Stacktrace:
+	at knot//net.minecraft.class_3178.run(class_3178.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+-- Performance stats --
+Details:
+	Random tick rate: 3
+	Level stats: ResourceKey[minecraft:dimension / minecraft:overworld]: players: 0, entities: 97,97,43,529,529,0,0 [minecraft:sheep:29,minecraft:item:20,minecraft:chicken:12,minecraft:pig:11,minecraft:cow:7], block_entities: 19 [minecraft:mob_spawner:14,minecraft:beehive:5], block_ticks: 21913, fluid_ticks: 48, chunk_source: Chunks[S] W: 2209 E: 97,97,43,529,529,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_end]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_nether]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 17.0.17, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 883987168 bytes (843 MiB) / 2147483648 bytes (2048 MiB) up to 10737418240 bytes (10240 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.99
+	Virtual memory used (MB): 5762.54
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx10G
+	Server Running: true
+	Player Count: 0 / 20; []
+	Data Packs: vanilla
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'fabric'
+	Type: Dedicated Server (map_server.txt)
